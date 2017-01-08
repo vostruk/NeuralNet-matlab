@@ -8,7 +8,7 @@ function [mu trmx] = prepTransform(tvec, comp_count)
 % this is memory-hungry version
 % commented out is the version proper for Win32 environment
 
-tic;
+%tic;
 mu = mean(tvec);
 cmx = cov(tvec); 
 
@@ -26,7 +26,7 @@ cmx = cov(tvec);
 %end
 %cmx = cmx / (size(tvec,1)-1);
 
-toc
+%toc
 [evec eval] = eig(cmx);
 eval = sum(eval);
 

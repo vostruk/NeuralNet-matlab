@@ -19,8 +19,8 @@ function [hidlw outlw terr] = backprop(tset, tslb, inihidlw, inioutlw, lr)
 % foreach sample in the training set
 	for i=1:rows(tset)	
     % 3. Set desired output of the ANN
-    dout = -ones(1, columns(outlw));
-    dout(tslb(i)) = 1;
+    dout = -ones(1, columns(outlw))*0.9;
+    dout(tslb(i)) = 1*0.9;
     
 		% 4. Propagate input forward through the ANN
     hlval = actf([tset(i,:) 1] * hidlw);

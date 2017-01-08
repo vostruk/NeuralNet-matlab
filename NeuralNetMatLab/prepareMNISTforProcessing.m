@@ -8,10 +8,7 @@ tstv = pcaTransform(tstv, mu, trmx);
 tlab += 1;
 tstl += 1;
 
-%also do some NORMALIZING HERE
-normTrain = normalizeMx(tvec);
-normTest = normalizeMx(tstv);
-tvec = normTrain;
-tstv = normTest;
+%also do some NORMALIZING HERE if needed
+[tvec tstv] = normalizeMx(tvec, tstv);
 
 endfunction
